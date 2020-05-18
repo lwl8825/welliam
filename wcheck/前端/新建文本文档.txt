@@ -1,0 +1,13 @@
+前端项目SJWOSF更新文件位置
+build
+webpack.base.conf.js
+
+src/api/moudules/
+system.js
+
+src
+vendor文件夹
+main.js
+
+src/views/note/
+wcheck.vue

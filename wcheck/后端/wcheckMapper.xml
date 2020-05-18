@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.temp.common.mapper.wcheckMapper" >
+
+    <resultMap id="BaseResultMap" type="com.temp.common.model.entity.wcheck" >
+        <result column="id" property="id" jdbcType="INTEGER" />
+        <result column="time" property="time" jdbcType="VARCHAR" />
+        <result column="usercode" property="usercode" jdbcType="VARCHAR" />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="stime" property="stime" jdbcType="VARCHAR" />
+        <result column="etime" property="etime" jdbcType="VARCHAR" />
+        <result column="outdesc" property="outdesc" jdbcType="VARCHAR" />
+        <result column="kqzt" property="kqzt" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        id, time, usercode, username, stime, etime, outdesc , kqzt 
+    </sql>
+
+    <select id="queryList" resultMap="BaseResultMap" parameterType="com.temp.common.model.entity.wcheck">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM wcheck
+        <where>
+            <if test="id != null" >
+                AND id = #{id,jdbcType=INTEGER}
+            </if>
+            <if test="time != null" >
+                AND time = #{time,jdbcType=VARCHAR}
+            </if>
+            <if test="usercode != null" >
+                AND usercode = #{usercode,jdbcType=VARCHAR}
+            </if>
+            <if test="username != null" >
+                AND username = #{username,jdbcType=VARCHAR}
+            </if>
+            <if test="stime != null" >
+                AND stime = #{stime,jdbcType=VARCHAR}
+            </if>
+            <if test="etime != null" >
+                AND etime = #{etime,jdbcType=VARCHAR}
+            </if>
+            <if test="outdesc != null" >
+                AND outdesc = #{outdesc,jdbcType=VARCHAR}
+            </if>
+            <if test="kqzt != null" >
+                AND kqzt = #{kqzt,jdbcType=VARCHAR}
+            </if>
+        </where>
+        ORDER BY id DESC
+    </select>
+
+    <select id="queryPageList1" resultMap="BaseResultMap" parameterType="com.temp.common.model.entity.wcheck">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM wcheck
+        <where>
+            <if test="id != null" >
+                AND id = #{id,jdbcType=INTEGER}
+            </if>
+            <if test="time != null" >
+                AND time = #{time,jdbcType=VARCHAR}
+            </if>
+            <if test="usercode != null" >
+                AND usercode = #{usercode,jdbcType=VARCHAR}
+            </if>
+            <if test="username != null" >
+                AND username = #{username,jdbcType=VARCHAR}
+            </if>
+            <if test="stime != null" >
+                AND stime = #{stime,jdbcType=VARCHAR}
+            </if>
+            <if test="etime != null" >
+                AND etime = #{etime,jdbcType=VARCHAR}
+            </if>
+            <if test="outdesc != null" >
+                AND outdesc = #{outdesc,jdbcType=VARCHAR}
+            </if>
+            <if test="kqzt != null" >
+                AND kqzt = #{kqzt,jdbcType=VARCHAR}
+            </if>
+        </where>
+        
+    </select>
+
+    <select id="queryCount" resultType="java.lang.Integer" parameterType="com.temp.common.model.entity.wcheck">
+        SELECT COUNT(*) FROM wcheck
+        <where>
+            <if test="id != null" >
+                AND id = #{id,jdbcType=INTEGER}
+            </if>
+            <if test="time != null" >
+                AND time = #{time,jdbcType=VARCHAR}
+            </if>
+            <if test="usercode != null" >
+                AND usercode = #{usercode,jdbcType=VARCHAR}
+            </if>
+            <if test="username != null" >
+                AND username = #{username,jdbcType=VARCHAR}
+            </if>
+            <if test="stime != null" >
+                AND stime = #{stime,jdbcType=INTEGER}
+            </if>
+            <if test="etime != null" >
+                AND etime = #{etime,jdbcType=VARCHAR}
+            </if>
+            <if test="outdesc != null" >
+                AND outdesc = #{outdesc,jdbcType=VARCHAR}
+            </if>
+            <if test="kqzt != null" >
+                AND kqzt = #{kqzt,jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryOne" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM wcheck
+        WHERE id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <delete id="delete" parameterType="java.lang.Integer" >
+        DELETE FROM wcheck
+        WHERE id = #{id,jdbcType=INTEGER}
+    </delete>
+
+    <insert id="add" parameterType="com.temp.common.model.entity.wcheck" >
+        INSERT INTO wcheck
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <!--  if test="id != null" >
+                id,
+            </if-->
+            <if test="time != null" >
+                time,
+            </if>
+            <if test="usercode != null" >
+                usercode,
+            </if>
+            <if test="username != null" >
+                username,
+            </if>
+            <if test="stime != null" >
+                stime,
+            </if>
+            <if test="etime != null" >
+                etime,
+            </if>
+            <if test="outdesc != null" >
+                outdesc,
+            </if>
+            <if test="kqzt != null" >
+                kqzt,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <!--  if test="id != null" >
+                #{id,jdbcType=INTEGER},
+            </if-->
+            <if test="time != null" >
+                #{time,jdbcType=VARCHAR},
+            </if>
+            <if test="usercode != null" >
+                #{usercode,jdbcType=VARCHAR},
+            </if>
+            <if test="username != null" >
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="stime != null" >
+                #{stime,jdbcType=INTEGER},
+            </if>
+            <if test="etime != null" >
+                #{etime,jdbcType=VARCHAR},
+            </if>
+            <if test="outdesc != null" >
+                #{outdesc,jdbcType=VARCHAR},
+            </if>
+            <if test="kqzt != null" >
+                #{kqzt,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="update" parameterType="com.temp.common.model.entity.wcheck" >
+        update wcheck
+        <set>
+            <if test="time != null" >
+                time = #{time,jdbcType=VARCHAR},
+            </if>
+            <if test="usercode != null" >
+                usercode = #{usercode,jdbcType=VARCHAR},
+            </if>
+            <if test="username != null" >
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="stime != null" >
+                stime = #{stime,jdbcType=INTEGER},
+            </if>
+            <if test="etime != null" >
+                etime = #{etime,jdbcType=VARCHAR},
+            </if>
+            <if test="outdesc != null" >
+                outdesc = #{outdesc,jdbcType=VARCHAR},
+            </if>
+            <if test="kqzt != null" >
+                kqzt = #{kqzt,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

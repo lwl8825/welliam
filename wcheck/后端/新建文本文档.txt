@@ -1,0 +1,24 @@
+装三个插件
+npm file-saver
+npm xlsx
+npm script-loader
+
+文件位置
+/springboot-authority/src/main/java/com/temp/common/mapper/
+BaseMapper.java
+wcheckMapper.java
+
+/springboot-authority/src/main/java/com/temp/admin/dto/
+wcheckDTO.java
+
+/springboot-authority/src/main/java/com/temp/common/model/entity/
+wcheck.java
+
+/springboot-authority/src/main/java/com/temp/common/service/
+wcheckService.java
+
+/springboot-authority/src/main/java/com/temp/ntoe/controller/
+WcheckController.java
+
+/springboot-authority/src/main/resources/mapper/common/
+wcheckMapper.xml
