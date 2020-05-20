@@ -1,20 +1,32 @@
-   1- 针对已整理的l信息（如下）----ok
-         追加字段“考勤状态”，类型 文本
+方法一 通过命令直接修改远程地址
+进入git_test根目录
+修改远程仓库连接方法:
+方法一git remote 查看所有远程仓库， git remote xxx 查看指定远程仓库地址
+git remote set-url origin http://192.168.100.235:9797/john/git_test.git
+方法二 通过命令先删除再添加远程仓库
+进入git_test根目录
+git remote 查看所有远程仓库， git remote xxx 查看指定远程仓库地址
+git remote rm origin 
+git remote add origin http://192.168.100.235:9797/john/git_test.git
+方法三 直接修改配置文件
+进入git_test/.git
+vim config 
 
-   2- 提供新功能：出勤考核 （在查询界面以按钮形式提供，与查询按钮同一层级）----ok
-         用户点击此按钮后， 针对当前已查询的结果列表，计算 “考勤状态”并更新数据库
-          “考勤状态”计算规则：a-先提示用户录入标准上班时间（如 上午9：00）及标准下班时间（如 下午5：30）
-          分别与导入的“上班时间”及“下班时间”进行对比
-          “正常出勤”--“上班时间”不晚于标准上班时间，且“下班时间”不早于标准下班时间
-          “迟到早退”--“上班时间”晚于标准上班时间，或“下班时间”早于标准下班时间
-          “旷工”--“上班时间”数据为空，或“下班时间”数据为空
+[core] 
+repositoryformatversion = 0 
+filemode = true 
+logallrefupdates = true 
+precomposeunicode = true 
+[remote "origin"] 
+url = http://192.168.100.235:9797/shimanqiang/assistant.git 
+fetch = +refs/heads/*:refs/remotes/origin/* 
+[branch "master"] 
+remote = origin 
+merge = refs/heads/master
 
-   3-提供新功能：出勤说明 （在查询界面以按钮形式提供，位于表格汇总每行数据末尾列）---ok
-        用户点击此按钮后，可编辑“出勤说明”字段内容（但不可以编辑其他任务内容），一旦编辑并保存，列表界面中“出勤说明”文字需改为红色字体
+修改 [remote “origin”]下面的url即可
 
-   4-提供新功能：“考勤状态调整”（在查询界面以按钮形式提供，位于表格汇总每行数据末尾列）---ok
-        用户点击此按钮后，可编辑“考勤状态字段内容（但不可以编辑其他任务内容），形式为下拉表：正常出勤/迟到早退/旷工/病假/事假/年假/婚假/丧假/其他
+方法四 通过第三方git客户端修改。
+以SourceTree为例，点击 仓库 -> 仓库配置 -> 远程仓库 即可管理此项目中配置的所有远程仓库， 而且这个界面最下方还可以点击编辑配置文件，同样可以完成方法三。
 
-   5-新增查下条件“考勤状态” 
-
-
+转载于:https://www.cnblogs.com/wangleBlogs/p/8006672.html
