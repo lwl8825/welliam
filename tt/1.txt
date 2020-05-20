@@ -10,8 +10,8 @@ git remote rm origin
 git remote add origin http://192.168.100.235:9797/john/git_test.git
 方法三 直接修改配置文件
 进入git_test/.git
-vim config 
-
+vim config
+111111111111111111111
 [core] 
 repositoryformatversion = 0 
 filemode = true 
