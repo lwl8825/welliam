@@ -1,0 +1,343 @@
+<!-- 
+System:nosign
+creater:乐威廉
+creattime:20200803
+info:创建目录展示网页用于显示课程视频用
+change:
+1增加字体标题特效
+2修改背景特效，增加漂浮云特效
+3透明化特效
+4增加菜单收放功能
+5修改布局，菜单区缩小空间
+-->
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAD制作目录</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+.milky {
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;;
+  text-transform: uppercase;
+  display: block;
+  font-size: 92px;
+  color: #f1ebe5;
+  text-shadow: 0 8px 9px #c4b59d, 0px -2px 1px #fff;
+  font-weight: bold;
+  letter-spacing: -4px;
+  text-align: center;
+  border-radius: 20px;
+}
+p,ul,li{ margin:0px;}
+p{ margin-left:20px;}
+.child{ display:none;}
+</style>
+<body class="sky">
+<div style="text-align:left;">
+  <table border="1" width="100%" height="100%">
+<tr align="center" height="300px"><td  colspan="2"  bgcolor="#99CCFF">
+<h1 class="milky"><font color="#FFFFCC">云彩</font></h1></td></tr>
+<tr>
+<td bgcolor="#CCCCFF" background="" height="550px">
+<div id="main" style="height:500px;overflow-y:scroll;">
+<font color="black">
+<br>
+<h2>特效视频</h2>
+<br>
+<br>
+<br>
+<ul id="treeview" class="filetree">
+    <li><span class="folder" onClick="testaa(1);show('rw1');">1</span>
+        <ul id="rw1" class="child">
+        <li><span class="file" onClick="testbb(1,1);">制</span></li>
+        <li><span class="file" onClick="testbb(1,2);">图</span></li>
+        <li><span class="file" onClick="testbb(1,3);">块</span></li>
+        <li><span class="file" onClick="testbb(1,4);">建并在图形中插图块</span></li>
+        <li><span class="file" onClick="testbb(1,5);">创建带</span></li>
+        <li><span class="file" onClick="testbb(1,6);">创建并插带属图块</span></li>
+        </ul>
+    </li>
+    <li><span class="folder" onClick="testaa(2);show('rw2');">2</span>
+        <ul id="rw2" class="child">
+        <li><span class="file" onClick="testbb(2,1);">图纸幅面格式</span></li>
+        <li><span class="file" onClick="testbb(2,2);">绘图、AuoCAD中出图比例及相关设置</span></li>
+        <li><span class="file" onClick="testbb(2,3);">创建A幅建筑制图样板图</span></li>
+        </ul>
+    </li>
+    <li><span class="folder" onClick="testaa(3);show('rw3');">3</span>
+        <ul id="rw3" class="child">
+        <li><span class="file" onClick="testbb(3,1);">建筑总图识读</span></li>
+        <li><span class="file" onClick="testbb(3,2);">建筑平的形成和用途</span></li>
+        <li><span class="file" onClick="testbb(3,3);">建筑平示内容</span></li>
+        <li><span class="file" onClick="testbb(3,4);">识读某住宅筑平面图</span></li>
+        <li><span class="file" onClick="testbb(3,5);">建筑平图的图示方法</span></li>
+        <li><span class="file" onClick="testbb(3,6);">绘制某宅建筑平面图</span></li>
+        </ul>
+    </li>
+    <li><span class="folder" onClick="testaa(4);show('rw4');">4</span>
+        <ul id="rw4" class="child">
+        <li><span class="file" onClick="testbb(4,1);">建筑立面的形成和用途</span></li>
+        <li><span class="file" onClick="testbb(4,2);">建筑立面图示内容</span></li>
+        <li><span class="file" onClick="testbb(4,3);">识读某住建筑立面图</span></li>
+        <li><span class="file" onClick="testbb(4,4);">建筑立面图示方法</span></li>
+        <li><span class="file" onClick="testbb(4,5);">建筑立面的绘制方法</span></li>
+        <li><span class="file" onClick="testbb(4,6);">绘制某住建筑立面图</span></li>
+        </ul>
+    </li>
+    <li><span class="folder" onClick="testaa(5);show('rw5');">5</span>
+        <ul id="rw5" class="child">
+        <li><span class="file" onClick="testbb(5,1);">建剖面形成和用途</span></li>
+        <li><span class="file" onClick="testbb(5,2);">建剖面示内容与方法</span></li>
+        <li><span class="file" onClick="testbb(5,3);">识某住筑剖面图</span></li>
+        <li><span class="file" onClick="testbb(5,4);">绘制某住筑剖面图</span></li>
+        </ul>
+    </li>
+    <li><span class="folder" onClick="testaa(6);show('rw6');">6</span>
+        <ul id="rw6" class="child">
+        <li><span class="file" onClick="testbb(6,1);">形成及作用、详图的种类</span></li>
+        <li><span class="file" onClick="testbb(6,2);">详图的图示内容和方法</span></li>
+        <li><span class="file" onClick="testbb(6,3);">身详图</span></li>
+        <li><span class="file" onClick="testbb(6,4);">楼梯详图</span></li>
+        <li><span class="file" onClick="testbb(6,5);">建筑</span></li>
+        <li><span class="file" onClick="testbb(6,6);">采用不详图时的相关设置</span></li>
+        </ul>
+    </li>
+    <li><span class="folder" onClick="testaa(7);show('rw7');">7</span>
+        <ul  id="rw7" class="child">
+        <li><span class="file" onClick="testbb(7,1);">配置打印设备</span></li>
+        </ul>
+    </li>
+    <li><span class="folder" onClick="testaa(8);show('rw8');">8</span>
+        <ul id="rw8" class="child">
+        <li><span class="file" onClick="testbb(8,1);">页面设置与打印</span></li>
+        <li><span class="file" onClick="testbb(8,2);">打印某住宅底层平面图</span></li>
+        </ul>
+    </li>
+    <li><span class="folder" onClick="testaa(9);show('rw9');">9</span>
+        <ul id="rw9" class="child">
+		<li><span class="file" onClick="testbb(9,1);">创建和管理布局</span></li>
+        <li><span class="file" onClick="testbb(9,2);">使用浮动视口、插入图框、打印图纸</span></li>
+        <li><span class="file" onClick="testbb(9,3);">打印某住宅建筑立面图</span></li>
+        </ul>
+    </li>
+</ul>
+</font>
+</div>
+</td>
+<td background="../演示/img/1.jpg">
+<div style="text-align:center"> 
+  <br> 
+  <video id="video1" width="700">
+    <source src="" type="video/mp4">
+    您的浏览器不支持 HTML5 video 标签。
+  </video>
+  <br>
+  <!--button onClick="playPause();">播放/暂停</button-->
+</div> 
+
+<script> 
+var myVideo=document.getElementById("video1");
+var url1="../kc/mainTsk/";//主任务目录9个视频
+var url2="../kc/tskNote/";//子任务目录36个视频
+var gs=".mp4";
+var rwb="";
+function show(id){
+		var ul = document.getElementById(id);
+		if(ul.style.display == "block"){
+			ul.style.display = "none";
+		}else{
+			ul.style.display = "block"; 
+		}
+}
+function testaa(a){
+    if(a==1){
+		myVideo.src=url1+"号创建成块"+gs;
+	}
+	if(a==2){
+		myVideo.src=url1+"02 任境的设置"+gs;
+	}
+	if(a==3){
+		myVideo.src=url1+"0图绘制"+gs;
+	}
+	if(a==4){
+		myVideo.src=url1+"0面图绘制"+gs;
+	}
+	if(a==5){
+		myVideo.src=url1+"0图绘制"+gs;
+	}
+	if(a==6){
+		myVideo.src=url1+"0详图的绘制"+gs;
+	}
+	if(a==7){
+		myVideo.src=url1+"打印设备"+gs;
+	}
+	if(a==8){
+		myVideo.src=url1+"印出图"+gs;
+	}
+	if(a==9){
+		myVideo.src=url1+"0出图"+gs;
+	}
+	playPause();
+} 
+function testbb(a,b){
+    if(a==1){
+		rwb="01任务一/";
+		if(b==1){
+			myVideo.src=url2+rwb+"01 任务一 建筑图样常用符号的规定与绘制"+gs;
+		}
+		if(b==2){
+			myVideo.src=url2+rwb+"02 任务一 创建图块"+gs;
+		}
+		if(b==3){
+			myVideo.src=url2+rwb+"03 任务一 图块的插入"+gs;
+		}
+		if(b==4){
+			myVideo.src=url2+rwb+"04 任务一 建立并在图形中插入“指北针”图块"+gs;
+		}
+		if(b==5){
+			myVideo.src=url2+rwb+"05 任务一 创建带属性的图块"+gs;
+		}
+		if(b==6){
+			myVideo.src=url2+rwb+"06 任务一 创建并插入带属性的：“横向轴线编号”图块"+gs;
+		}
+	}
+	if(a==2){
+		rwb="02任务二/";
+		if(b==1){
+			myVideo.src=url2+rwb+"01 任务二 图纸幅面与格式"+gs;
+		}
+		if(b==2){
+			myVideo.src=url2+rwb+"02 任务二 绘图比例、AuToCAD中出图比例及相关设置"+gs;
+		}
+		if(b==3){
+			myVideo.src=url2+rwb+"03 任务二 创建A3图幅建筑制图样板图"+gs;
+		}
+	}
+	if(a==3){
+		rwb="03任务三/";
+		if(b==1){
+			myVideo.src=url2+rwb+"01 任务三 建筑总平面图识读"+gs;
+		}
+		if(b==2){
+			myVideo.src=url2+rwb+"02 任务三 建筑平面图的形成和用途"+gs;
+		}
+		if(b==3){
+			myVideo.src=url2+rwb+"03 任务三 建筑平面图图示内容"+gs;
+		}
+		if(b==4){
+			myVideo.src=url2+rwb+"04 任务三 识读某住宅建筑平面图"+gs;
+		}
+		if(b==5){
+			myVideo.src=url2+rwb+"05 任务三 建筑平面图的图示方法 "+gs;
+		}
+		if(b==6){
+			myVideo.src=url2+rwb+"06 任务三 绘制某住宅建筑平面图"+gs;
+		}
+	}
+	if(a==4){
+		rwb="04任务四/";
+		if(b==1){
+			myVideo.src=url2+rwb+"01 任务四 建筑立面图的形成和用途"+gs;
+		}
+		if(b==2){
+			myVideo.src=url2+rwb+"02 任务四 建筑立面图图示内容"+gs;
+		}
+		if(b==3){
+			myVideo.src=url2+rwb+"03 任务四 识读某住宅建筑立面图"+gs;
+		}
+		if(b==4){
+			myVideo.src=url2+rwb+"04 任务四 建筑立面图的图示方法"+gs;
+		}
+		if(b==5){
+			myVideo.src=url2+rwb+"05 任务四 建筑立面图的绘制方法"+gs;
+		}
+		if(b==6){
+			myVideo.src=url2+rwb+"06 任务四 绘制某住宅建筑立面图"+gs;
+		}
+	}
+	if(a==5){
+		rwb="05任务五/";
+		if(b==1){
+			myVideo.src=url2+rwb+"01 任务五 建筑剖面图的形成和用途"+gs;
+		}
+		if(b==2){
+			myVideo.src=url2+rwb+"02 任务五 建筑剖面图图示内容与方法"+gs;
+		}
+		if(b==3){
+			myVideo.src=url2+rwb+"03 任务五 识读某住宅建筑剖面图"+gs;
+		}
+		if(b==4){
+			myVideo.src=url2+rwb+"04 任务五 绘制某住宅建筑剖面图"+gs;
+		}
+	}
+	if(a==6){
+		rwb="06任务六/";
+		if(b==1){
+			myVideo.src=url2+rwb+"01 任务六 建筑详图的形成及作用、详图的种类-"+gs;
+		}
+		if(b==2){
+			myVideo.src=url2+rwb+"02 任务六 建筑详图的图示内容和方法-"+gs;
+		}
+		if(b==3){
+			myVideo.src=url2+rwb+"03 任务六 识读墙身详图-"+gs;
+		}
+		if(b==4){
+			myVideo.src=url2+rwb+"04 任务六 识读楼梯详图"+gs;
+		}
+		if(b==5){
+			myVideo.src=url2+rwb+"05 任务六 绘制建筑详图"+gs;
+		}
+		if(b==6){
+			myVideo.src=url2+rwb+"06 任务六 采用不同比例绘制详图时的相关设置"+gs;
+		}
+	}
+	if(a==7){
+		rwb="07任务七/";
+		if(b==1){
+			myVideo.src=url2+rwb+"01 任务七 配置打印设备"+gs;
+		}
+	}
+	if(a==8){
+		rwb="08任务八/";
+		if(b==1){
+			myVideo.src=url2+rwb+"01 任务八 页面设置与打印"+gs;
+		}
+		if(b==2){
+			myVideo.src=url2+rwb+"02 任务八 打印某住宅底层平面图"+gs;
+		}
+	}
+	if(a==9){
+		rwb="09任务九/";
+		if(b==1){
+			myVideo.src=url2+rwb+"01 任务九 创建和管理布局"+gs;
+		}
+		if(b==2){
+			myVideo.src=url2+rwb+"02 任务九 使用浮动视口、插入图框、打印图纸"+gs;
+		}
+		if(b==3){
+			myVideo.src=url2+rwb+"03 任务九 打印某住宅建筑立面图"+gs;
+		}
+	}
+	playPause();
+} 
+function playPause()
+{ 
+	if (myVideo.paused) 
+	  myVideo.play(); 
+	else 
+	  myVideo.pause(); 
+} 
+</script> 
+</td>
+</tr>
+</table>
+</div>
+	<div class="clouds_one"></div>
+	<div class="clouds_two"></div>
+	<div class="clouds_three"></div>
+</body>
+</html>
